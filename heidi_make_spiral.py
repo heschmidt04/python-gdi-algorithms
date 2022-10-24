@@ -1,4 +1,9 @@
 def make_spiral(spiral_size):
+    """
+
+    :param spiral_size:
+    :return: array
+    """
     spiral = []  # start out empty
     for x in range(spiral_size):  # spiral becomes the spiral_size in number range
         spiral.append([x for x in range(spiral_size)])  # list comprehension - for x in range(): append(x)
@@ -73,7 +78,9 @@ def make_spiral(spiral_size):
 
     return spiral
 
+def print_result(result):
+    for row in result:
+        print(row)
 
-spiral = make_spiral(5)
-for row in spiral:
-    print(row)
+
+print_result(make_spiral(5))
