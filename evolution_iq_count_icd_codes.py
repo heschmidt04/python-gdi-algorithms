@@ -1,7 +1,11 @@
-
-icd_codes = [['icd_2', 'icd_3', 'icd_4'], ['icd_1', 'icd_2', 'icd_3'], ['icd_3', 'icd_5']]
+icd_codes = [
+    ["icd_2", "icd_3", "icd_4"],
+    ["icd_1", "icd_2", "icd_3"],
+    ["icd_3", "icd_5"],
+]
 
 output = {}
+
 
 def count_icd_codes(icd_codes):
     """
@@ -20,11 +24,14 @@ def count_icd_codes(icd_codes):
                 output[code] = output.get(code)
                 output[code] = 0
             output[code] += 1
-    return(output)
+    return output
+
 
 print(count_icd_codes(icd_codes))
 
 if __name__ == "__main__":
     import doctest
-    doctest.run_docstring_examples(count_icd_codes('str'), globals(), verbose=True,
-                                   name="count_icd_codes")
+
+    doctest.run_docstring_examples(
+        count_icd_codes("str"), globals(), verbose=True, name="count_icd_codes"
+    )

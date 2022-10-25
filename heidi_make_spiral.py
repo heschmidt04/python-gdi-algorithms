@@ -6,7 +6,9 @@ def make_spiral(spiral_size):
     """
     spiral = []  # start out empty
     for x in range(spiral_size):  # spiral becomes the spiral_size in number range
-        spiral.append([x for x in range(spiral_size)])  # list comprehension - for x in range(): append(x)
+        spiral.append(
+            [x for x in range(spiral_size)]
+        )  # list comprehension - for x in range(): append(x)
         # keep track of direction we are heading
 
     # spiral =
@@ -25,18 +27,30 @@ def make_spiral(spiral_size):
     ## keep track of the boundaries
     # spiral = [0,1,2,3,4] # check the python tutor screen shot for the value
 
-    top_boundary = 1  # start the top bound at 1 , not 0 because we start at row 0 and travel right
+    top_boundary = (
+        1  # start the top bound at 1 , not 0 because we start at row 0 and travel right
+    )
     bottom_boundary = spiral_size - 1  # which is 4
 
     left_bound = 0
     right_bound = spiral_size - 1  # which is 4
 
-    limit = (spiral_size * spiral_size)
+    limit = spiral_size * spiral_size
 
     ## Going to while loop here
     ## while left_bound < right_bound - changed to num < than limit
     while num <= limit:
-        print(row, col, num, direction, " boundaries:", left_bound, right_bound, top_boundary, bottom_boundary)
+        print(
+            row,
+            col,
+            num,
+            direction,
+            " boundaries:",
+            left_bound,
+            right_bound,
+            top_boundary,
+            bottom_boundary,
+        )
 
         spiral[row][col] = num  # This I get a type int unsubscriptable error
 
@@ -77,6 +91,7 @@ def make_spiral(spiral_size):
                 num += 1
 
     return spiral
+
 
 def print_result(result):
     for row in result:

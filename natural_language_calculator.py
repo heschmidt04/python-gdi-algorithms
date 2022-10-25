@@ -54,11 +54,13 @@ translation_map = {
     "eighty": 80,
     "ninety": 90,
     "hundred": 100,
-    "thousand": 1000
+    "thousand": 1000,
 }
 
 
-translation_map.get("hundred",)
+translation_map.get(
+    "hundred",
+)
 # 100
 
 # Word2Number will make things easier but for now going with translation map for exercise
@@ -68,6 +70,7 @@ translation_map.get("hundred",)
 
 ## See Loom of the session for working through the javascript
 ## https://www.loom.com/share/0e070f6d52c54c739dd1ecbd7affb6bd?t=1
+
 
 def translate_number_to_words(num):
     """
@@ -80,22 +83,22 @@ def translate_number_to_words(num):
     """
     hundreds = num // 100
     # floor divide tens to avoid float, then get to the ones, then times that by 10
-    tens = ((num - (hundreds * 100)) // 10 ) * 10
-    ones = (num % 10)
+    tens = ((num - (hundreds * 100)) // 10) * 10
+    ones = num % 10
 
     print(hundreds, tens, ones)
 
-    hundreds_text = translation_map.get(hundreds,"zero")
+    hundreds_text = translation_map.get(hundreds, "zero")
     tens_text = translation_map.get(tens)
     ones_text = translation_map.get(ones)
 
     print(num, hundreds_text, tens_text, ones_text)
 
-    #if hundreds > 0:
-     #   hundred_text = translation_map.get(hundreds,) + "hundred"
-     #   tens_text = translation_map.get(tens,)
-     #   ones_text = translation_map.get(ones,)
-     #   print(num, hundreds_text, tens_text, ones_text)
+    # if hundreds > 0:
+    #   hundred_text = translation_map.get(hundreds,) + "hundred"
+    #   tens_text = translation_map.get(tens,)
+    #   ones_text = translation_map.get(ones,)
+    #   print(num, hundreds_text, tens_text, ones_text)
 
     if hundreds > 0:
         return f"{hundreds_text} + {tens_text} + {ones_text}"
@@ -104,6 +107,7 @@ def translate_number_to_words(num):
         return f"{tens_text} + {ones_text}"
 
     return ones_text
+
 
 # checks to make sure the numbers translate
 print(translate_number_to_words(100))
@@ -121,6 +125,7 @@ print(translate_number_to_words(10000))
 ## 10000 one hundred zero zero
 # 'one hundred + zero + zero'
 
+
 def translate_number(num_string):
     """
     Find the number based on the string
@@ -134,16 +139,17 @@ def translate_number(num_string):
     for word in num_words:
         if word == "hundred":
             ## do some backtracking
-            num = translation_map.get(last_word,0)
+            num = translation_map.get(last_word, 0)
             output_num -= int(num)
             output_num += int(num) * 100
             continue
 
-        num = translation_map.get(word,0)
+        num = translation_map.get(word, 0)
         output_num += num
         last_word = word
 
     return output_num
+
 
 def natural_language_calculator(user_input):
     """
@@ -164,10 +170,10 @@ def natural_language_calculator(user_input):
     number_string = " ".join(words[1:])
     ## what is the first number and what is the second number?
     ##word[1] and word[2]
-        ## Look at the first word
-        ## if it is add, do addition
-        ## if it is subtract, do subtraction,
-        ## if it is divide, do division
+    ## Look at the first word
+    ## if it is add, do addition
+    ## if it is subtract, do subtraction,
+    ## if it is divide, do division
     ## depending on the operation, perform the operation
     if first_word == "add":
         numbers = user_input.split(" and ")
@@ -202,5 +208,6 @@ def natural_language_calculator(user_input):
     ## translate the output into natural language
     ## return the output
     translate_number_to_words(output_num)
+
 
 print(natural_language_calculator("add twenty three and sixty eight"))

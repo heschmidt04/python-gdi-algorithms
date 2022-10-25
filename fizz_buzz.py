@@ -1,5 +1,6 @@
 ## FizzBuzz
 
+
 def fizz_buzz(N):
     """
     https://replit.com/@HeidiSchmidt/GDI-Technical-Interview-Prep-FizzBuzz-and-Count-Primes#main.py
@@ -32,5 +33,3 @@ print(fizz_buzz(15))
 print(fizz_buzz(10))
 
 print(fizz_buzz(20))
-
-

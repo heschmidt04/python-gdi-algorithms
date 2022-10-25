@@ -6,19 +6,11 @@
 
 ## input: 2
 ## ouput:
-spiral_1 = [
-    [1, 2],
-    [4, 3]
-]
+spiral_1 = [[1, 2], [4, 3]]
 
 ## input: 4
 ## ouput:
-spiral_2 = [
-    [1, 2, 3, 4],
-    [12, 13, 14, 5],
-    [11, 16, 15, 6],
-    [10, 9, 8, 7]
-]
+spiral_2 = [[1, 2, 3, 4], [12, 13, 14, 5], [11, 16, 15, 6], [10, 9, 8, 7]]
 ## (note from Liz) I put spaces to make the spiral easier to see
 
 ## input: 5
@@ -28,7 +20,7 @@ spiral_3 = [
     [16, 17, 18, 19, 6],
     [15, 24, 25, 20, 7],
     [14, 23, 22, 21, 8],
-    [13, 12, 11, 10, 9]
+    [13, 12, 11, 10, 9],
 ]
 
 
@@ -38,6 +30,7 @@ spiral_3 = [
 # 4 variables which store the outer edge for each side
 # for a direction, process the full row or column of that direction
 #   then adjust the edge accordingly
+
 
 def make_spiral(size):
     arr = [[0 for i in range(size)] for j in range(size)]

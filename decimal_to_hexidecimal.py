@@ -22,3 +22,4 @@ def decimal_to_hexidecimal(num):
     :param num:
     :return:
     """
+    pass

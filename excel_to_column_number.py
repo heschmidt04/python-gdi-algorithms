@@ -24,15 +24,18 @@ def excel_to_column_number(N):
     :param N:
     :return: string
     """
-    output = "" # set up a string
+    output = ""  # set up a string
     while N > 0:
-    # find the remainder of the number % 26 (the number of characters)
+        # find the remainder of the number % 26 (the number of characters)
         remainder = N % 26
-        letter = chr(remainder + 97) # the letter is in the alphabetical characters range
-    #   put that character in the next
+        letter = chr(
+            remainder + 97
+        )  # the letter is in the alphabetical characters range
+        #   put that character in the next
         output = letter + output
-        N = N//26 # floor division used here to get an integer
+        N = N // 26  # floor division used here to get an integer
     return output
+
 
 print(excel_to_column_number(8))
 print(excel_to_column_number(26))
@@ -55,20 +58,30 @@ def divmod_excel(n):
     if b == 0:
         return a - 1, b + 26
     return a, b
+
+
 # With that, we can create a to_excel function:
 
 import string
+
+
 def to_excel(num):
     chars = []
     while num > 0:
         num, d = divmod_excel(num)
         chars.append(string.ascii_uppercase[d - 1])
-    return ''.join(reversed(chars))
+    return "".join(reversed(chars))
+
+
 # For the other direction, this is a bit simpler
 
 from functools import reduce
+
+
 def from_excel(chars):
-    return reduce(lambda r, x: r * 26 + x + 1, map(string.ascii_uppercase.index, chars), 0)
+    return reduce(
+        lambda r, x: r * 26 + x + 1, map(string.ascii_uppercase.index, chars), 0
+    )
 
 
 to_excel(702)
