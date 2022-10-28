@@ -66,10 +66,10 @@ translation_map.get(
 # Word2Number will make things easier but for now going with translation map for exercise
 # Then try it with word to number afterwards
 # from word2number import w2n
-## Reference https://www.geeksforgeeks.org/python-convert-numeric-words-to-numbers/
+# Reference https://www.geeksforgeeks.org/python-convert-numeric-words-to-numbers/
 
-## See Loom of the session for working through the javascript
-## https://www.loom.com/share/0e070f6d52c54c739dd1ecbd7affb6bd?t=1
+# See Loom of the session for working through the javascript
+# https://www.loom.com/share/0e070f6d52c54c739dd1ecbd7affb6bd?t=1
 
 
 def translate_number_to_words(num):
@@ -111,18 +111,18 @@ def translate_number_to_words(num):
 
 # checks to make sure the numbers translate
 print(translate_number_to_words(100))
-## 1 0 0
-## 100 one zero zero
+# 1 0 0
+# 100 one zero zero
 # 'one + zero + zero'
 
 print(translate_number_to_words(1000))
-## 10 0 0
-## 1000 ten zero zero
+# 10 0 0
+# 1000 ten zero zero
 # 'ten + zero + zero'
 
 print(translate_number_to_words(10000))
-## 100 0 0
-## 10000 one hundred zero zero
+# 100 0 0
+# 10000 one hundred zero zero
 # 'one hundred + zero + zero'
 
 
@@ -137,8 +137,9 @@ def translate_number(num_string):
     num_words = num_string.split(" ")
 
     for word in num_words:
+        last_word = word
         if word == "hundred":
-            ## do some backtracking
+            # do some backtracking
             num = translation_map.get(last_word, 0)
             output_num -= int(num)
             output_num += int(num) * 100
@@ -163,18 +164,17 @@ def natural_language_calculator(user_input):
     :param user_input:
     :return: string # note - not a number aka integer
     """
-    ## split the user_input into words
+    # split the user_input into words
     words = user_input.split(" ")
-    ## which operation am I doing?
+    # which operation am I doing?
     first_word = words[0]
-    number_string = " ".join(words[1:])
-    ## what is the first number and what is the second number?
-    ##word[1] and word[2]
-    ## Look at the first word
-    ## if it is add, do addition
-    ## if it is subtract, do subtraction,
-    ## if it is divide, do division
-    ## depending on the operation, perform the operation
+    # number_string = " ".join(words[1:])
+    # what is the first number and what is the second number? word[1] and word[2]
+    # Look at the first word
+    # if it is add, do addition
+    # if it is subtract, do subtraction,
+    # if it is divide, do division
+    # depending on the operation, perform the operation
     if first_word == "add":
         numbers = user_input.split(" and ")
         first_number = translate_number(numbers[0])
@@ -205,8 +205,8 @@ def natural_language_calculator(user_input):
 
     print(words)
 
-    ## translate the output into natural language
-    ## return the output
+    # translate the output into natural language
+    # return the output
     translate_number_to_words(output_num)
 
 

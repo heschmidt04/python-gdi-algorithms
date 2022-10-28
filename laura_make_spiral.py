@@ -1,20 +1,20 @@
 # https://replit.com/@LauraSteiner1/Spiral2#main.py
 
-## Write a function called make_spiral
-## You are given one argument, called size, an integer value
-## return a 2D array that outputs a spiral like so:
+# Write a function called make_spiral
+# You are given one argument, called size, an integer value
+# return a 2D array that outputs a spiral like so:
 
-## input: 2
-## ouput:
+# input: 2
+# ouput:
 spiral_1 = [[1, 2], [4, 3]]
 
-## input: 4
-## ouput:
+# input: 4
+# ouput:
 spiral_2 = [[1, 2, 3, 4], [12, 13, 14, 5], [11, 16, 15, 6], [10, 9, 8, 7]]
-## (note from Liz) I put spaces to make the spiral easier to see
+# (note from Liz) I put spaces to make the spiral easier to see
 
-## input: 5
-## output:
+# input: 5
+# output:
 spiral_3 = [
     [1, 2, 3, 4, 5],
     [16, 17, 18, 19, 6],

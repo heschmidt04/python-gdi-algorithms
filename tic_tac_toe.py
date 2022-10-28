@@ -1,16 +1,17 @@
 """
 Day 6 --
-https://replit.com/@lizthedeveloper/GDI-Technical-Interview-Prep-Tic-Tac-Toe-and-Which-Light#main.py
+ https://replit.com/@lizthedeveloper/GDI-Technical-Interview-Prep-Tic-Tac-Toe-and-Which-Light#main.py
  sudoku, connect 4,
 
  Given a tic-tac-toe board as a two-dimensional array (aka list),
  determine the winner!
  There are 0s, representing an empty space,
- 		1 representing the first player
- 	, and 2 representing the second player.
+ 1 representing the first player
+ and
+ 2 representing the second player.
 
-Write a function like so: tic_tac_toe_win_check(board)
-Returns the winner 1 or 2 or shows a draw of 0
+ Write a function like so: tic_tac_toe_win_check(board)
+ Returns the winner 1 or 2 or shows a draw of 0
 
  2 dimensional array
  1 is winning in the examples below
@@ -83,13 +84,13 @@ def check_column_win(column, board):
 
 
 # From screen shot
-def check_column_win(column, board):
-    first_num = board[0][column]
-    for row in range(len(board)):
-        ## check each row at the same column number
-        if (board[row][column]) != first_num:
-            return 0
-    return first_num
+# def check_column_win(column, board):
+#     first_num = board[0][column]
+#     for row in range(len(board)):
+#         # check each row at the same column number
+#         if (board[row][column]) != first_num:
+#             return 0
+#     return first_num
 
 
 def tic_tac_toe_win_check(board, column=None):
@@ -123,10 +124,10 @@ def tic_tac_toe_win_check(board, column=None):
         if win != 0:  # The problem was with check column win --
             # was set to always return a 0 and so it would never evaluate
             return f"This column was the winner! {win}"
-        elif win == None:
-            return f"We recieved back a None Type"
+        elif win is None:
+            return "We recieved back a None Type"
         else:
-            return f"Argh! something else happened"
+            return "Argh! something else happened"
     column += 1
 
 
