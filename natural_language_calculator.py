@@ -47,7 +47,7 @@ translation_map = {
     "nineteen": 19,
     "twenty": 20,
     "thirty": 30,
-    "fourty": 40,
+    "forty": 40,
     "fifty": 50,
     "sixty": 60,
     "seventy": 70,
@@ -75,11 +75,11 @@ translation_map.get(
 def translate_number_to_words(num):
     """
     This function takes the words for
-    addition, multiplication, subtraction, and division up to hundred
+    addition, multiplication, subtraction, and division up to a hundred
     It returns the numeric equivalent of the word for the number
 
-    :param num: int
-    :return: str
+        :param num: int
+        :return: str
     """
     hundreds = num // 100
     # floor divide tens to avoid float, then get to the ones, then times that by 10
@@ -155,7 +155,7 @@ def translate_number(num_string):
 def natural_language_calculator(user_input):
     """
     This function takes the words and does the math
-    key words: add, multiply, divide
+    keywords: add, multiply, divide
     extra words: by, and
 
     It relies on functions
@@ -171,9 +171,9 @@ def natural_language_calculator(user_input):
     # number_string = " ".join(words[1:])
     # what is the first number and what is the second number? word[1] and word[2]
     # Look at the first word
-    # if it is add, do addition
-    # if it is subtract, do subtraction,
-    # if it is divide, do division
+    # if it is "add", do addition
+    # if it is "subtract", do subtraction,
+    # if it is "divide", do division
     # depending on the operation, perform the operation
     if first_word == "add":
         numbers = user_input.split(" and ")
