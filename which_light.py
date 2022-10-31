@@ -1,30 +1,35 @@
-## ##########################################
-## The algorithm to find the shape of a wave
-
-## Homework
-
-## Which Light?
+# ##########################################
+# The algorithm to find the shape of a wave
+# Homework
+# Which Light?
 ##########################################
 
-# You are reading a digital signal coming from a light sensor connected to a pin on a microcontroller.
+# You are reading a digital signal coming from a light sensor
+# connected to a pin on a microcontroller.
 # Your job is to figure out which light has been turned on based on it's behavior.
 
-# You are given an unsorted list of integers from 0-255 representing the light level during a period of time,
+# You are given an unsorted list of integers
+# from 0-255 representing the light level during a period of time,
 # where each element is the reading for 1 millisecond of time.
 
-# There is a fair amount of random light coming in, and a distinct period of time where a light is turned on.
-# If a light is turned on, it will be on for a period of time longer than a few milliseconds - but you're not sure how long.
+# There is a fair amount of random light coming in,
+# and a distinct period of time where a light is turned on.
+# If a light is turned on, it will be on for a period of time longer than a few milliseconds
+# - but you're not sure how long.
 
 # Each light has a distinct pattern of lighting up:
 
 # Halogen lights brighten slowly after an initial jump in luminosity, and dim almost instantly,
 # and produce more variation in light emitted
 
-# Florecent lights brighten faster than halogen lights, produce a steadier light than halogen, and dim more slowly.
+# Florecent lights brighten faster than halogen lights,
+# produce a steadier light than halogen, and dim more slowly.
 
-# Incandecent lights brighten nearly immediately, and dim nearly immediately, and produce a consistent amount of light
+# Incandecent lights brighten nearly immediately,
+# and dim nearly immediately, and produce a consistent amount of light
 
-# LED lights brighten immediately, dim immediately, and produce a brighter amount of consistent light than incandecent lights
+# LED lights brighten immediately,
+# dim immediately, and produce a brighter amount of consistent light than incandecent lights
 
 
 # You are also not sure how bright it is in the room to begin with,
@@ -32,9 +37,10 @@
 # Only that an overhead light is on or off.
 
 # Write a function that returns
-#   which kind of light bulb has turned on, as a string (one of "halogen", "florecent", "incandecent", "LED")
+#   which kind of light bulb has turned on,
+#   as a string (one of "halogen", "florecent", "incandecent", "LED")
 
-## Examples
+# Examples
 example_one = [
     4,
     4,
@@ -240,10 +246,10 @@ example_four = [
 
 # LED
 
-## The rise is the attack (for lack of a better term)
-## The length of the start of when it starts to rise, to when it reaches maximum brightness
-## amplitutude - the height of the wave
-## sustain -- the consistency of the max
+# The rise is the attack (for lack of a better term)
+# The length of the start of when it starts to rise, to when it reaches maximum brightness
+# amplitutude - the height of the wave
+# sustain -- the consistency of the max
 
 
 def which_light(readings):
@@ -255,14 +261,14 @@ def which_light(readings):
     :return: string
     """
     attack_begin = 0
-    ## loop over the entire list
+    # loop over the entire list
     for index in range(len(readings)):
         attack_end = index
         reading = readings[index]
-        ## take note when the first jump in light value appears
+        # take note when the first jump in light value appears
         if reading - readings[index - 1] > 60 and attack_begin == 0:
             attack_begin = index
-            ## keep track of how long it takes to get to 200 (length of attack)
+            # keep track of how long it takes to get to 200 (length of attack)
         if reading == 200 and attack_end == 0:
             attack_end = index
 
@@ -275,9 +281,13 @@ def which_light(readings):
         return "LED"
 
 
-## check to see if there is "wobble" in the plateau (sustain)
-## check the length of the "decay" (how long does it take to go from 200 to at least 30 brightness)
-## pass
+# check to see if there is "wobble" in the plateau (sustain)
+# check the length of the "decay"
+# (how long does it take to go from 200 to at least 30 brightness)
+# pass
 
 
 print(which_light(example_one))
+print(which_light(example_two))
+print(which_light(example_three))
+print(which_light(example_four))

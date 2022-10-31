@@ -15,7 +15,9 @@ def count_icd_codes(icd_codes):
     :param icd_codes:
     :return: dict
 
-    >>> count_icd_codes([['icd_2', 'icd_3', 'icd_4'], ['icd_1', 'icd_2', 'icd_3'], ['icd_3', 'icd_5']])
+    >>> count_icd_codes([['icd_2', 'icd_3', 'icd_4']
+    , ['icd_1', 'icd_2', 'icd_3']
+    , ['icd_3', 'icd_5']])
     {'icd_2': 2, 'icd_3': 3, 'icd_4': 1, 'icd_1': 1, 'icd_5': 1}
     """
     for element in icd_codes:

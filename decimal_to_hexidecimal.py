@@ -1,5 +1,6 @@
 # Decimal to Hexadecimal
-# Given a number in decimal format, return a string representing that number in hexadecimal (base 16) format.
+# Given a number in decimal format,
+# return a string representing that number in hexadecimal (base 16) format.
 # For Example:
 # 0 = 0
 # 1 = 1

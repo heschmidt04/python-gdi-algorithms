@@ -1,25 +1,28 @@
-# Write a function called excel_to_column_number
-# that will take a positive integer, N.
-#
-# Return the equivalent column number in Excel.
-# For simplicity,
-# we’ll skip over the “AA” column behavior
-# and simply convert to a base-26 number,
-# using alpha characters as digits.
+import string
+from functools import reduce
 
-# For Example:
-# A=0
-# B=1
-# C=2
-# Z=25
-# BA=26
-# BB=27
-# BC=28
 
 # From GDI course
 def excel_to_column_number(N):
     """
     Take a number and convert it to the Excel column position aka location
+    Write a function called excel_to_column_number
+    that will take a positive integer, N.
+
+    Return the equivalent column number in Excel.
+    For simplicity,
+    we’ll skip over the “AA” column behavior
+    and simply convert to a base-26 number,
+    using alpha characters as digits.
+
+    For Example:
+    A=0
+    B=1
+    C=2
+    Z=25
+    BA=26
+    BB=27
+    BC=28
 
     :param N:
     :return: string
@@ -43,12 +46,12 @@ print(excel_to_column_number(702))
 print(excel_to_column_number(2400))
 
 """
-Reference: https://stackoverflow.com/questions/48983939/convert-a-number-to-excel-s-base-26 
+Reference: https://stackoverflow.com/questions/48983939/convert-a-number-to-excel-s-base-26
 
-The problem when converting to Excel’s “base 26” is that 
-for Excel, a number ZZ is actually 26 * 26**1 + 26 * 26**0 = 702 
-while normal base 26 number systems would make 
-a 1 * 26**2 + 1 * 26**1 + 0 * 26**0 = 702 (BBA) out of that. 
+The problem when converting to Excel’s “base 26” is that
+for Excel, a number ZZ is actually 26 * 26**1 + 26 * 26**0 = 702
+while normal base 26 number systems would make
+a 1 * 26**2 + 1 * 26**1 + 0 * 26**0 = 702 (BBA) out of that.
 So --->  we cannot use the usual ways here to convert these numbers.
 """
 
@@ -62,8 +65,6 @@ def divmod_excel(n):
 
 # With that, we can create a to_excel function:
 
-import string
-
 
 def to_excel(num):
     chars = []
@@ -75,8 +76,6 @@ def to_excel(num):
 
 # For the other direction, this is a bit simpler
 
-from functools import reduce
-
 
 def from_excel(chars):
     return reduce(
@@ -84,9 +83,6 @@ def from_excel(chars):
     )
 
 
-to_excel(702)
-#'ZZ'
-to_excel(703)
-#'AAA'
-to_excel(2400)
-# 'CNH'
+print(to_excel(702))  # 'ZZ'
+print(to_excel(703))  # 'AAA'
+print(to_excel(2400))  # 'CNH'

@@ -1,11 +1,13 @@
-## This is a big thing folks get tested
-# Replit is here at https://replit.com/@HeidiSchmidt1/GDI-Technical-Interview-Prep-Translator-and-JSON-Logs#main.py
+# This is a big thing folks get tested
+# Replit is here at https://bit.ly/3WbMaMp
 
 import pprint
 
 pp = pprint.pprint
 
+
 """
+# Write a function called analyze_logs that will accept logs as a string
 You are a Site Reliability Engineer, and you have a giant pile of logs to look through.
 We need to know what the most frequent error is,
 and what kinds of errors there are, and under what HTTP response code they will fall
@@ -37,9 +39,10 @@ raw_logs = """
 [ERROR] 500 Server Error: int is not subscriptable
 """
 
-## Write a function called analyze_logs that will accept logs as a string
+
 def analyze_logs(logs):
     """
+
     You are a Site Reliability Engineer, and you have a giant pile of logs to look through.
     We need to know
             what the most frequent error is,
@@ -67,7 +70,6 @@ def analyze_logs(logs):
                             }
                     }
             }
-
 
     """
     # Make the output human readable - mostly
@@ -99,7 +101,7 @@ def analyze_logs(logs):
         # Instead of trying to slice a list
         # use the dictionary to get set dictionary keys within the main dictionary
         if log_level not in output.keys():
-            ## Looking for the existence of a key - set the log level dictionary
+            # Looking for the existence of a key - set the log level dictionary
             output[log_level] = {}
         # Looking for the existence of each part of the dictionaries within the dictionary
         if status_code not in output[log_level].keys():
@@ -115,7 +117,7 @@ def analyze_logs(logs):
     return pp(output)
 
 
-analyze_logs(raw_logs)
+print(analyze_logs(raw_logs))
 
 # Return a dictionary with logging statistics,
 # that is formatted like so ( don't worry about spacing or formatting, only the data matters )
@@ -134,4 +136,4 @@ printed_output = {
     "INFO": {"200": {"OK": {"Login Successful": 6, "User sent a message": 6}}},
 }
 
-output["WARNING"]["403"]["Forbidden"]["No token in request parameters"]  # 3
+# output["WARNING"]["403"]["Forbidden"]["No token in request parameters"]  # 3

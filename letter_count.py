@@ -69,7 +69,8 @@ print(letter_count("ABabcDefgh"))
 
 def letter_count_hash_map(input_string):
     result = [0] * 26
-    result_map = {}  #  use this pattern for next problem
+    # use this map pattern for next problem
+    result_map = {}
     # loop over each letter
     for letter in input_string:
         # figure out which letter this is and where it goes

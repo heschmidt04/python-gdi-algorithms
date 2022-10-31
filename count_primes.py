@@ -3,7 +3,7 @@ def count_prime_numbers(n):
     This function takes in an array of numbers to count the prime numbers in it.
     Reference: https://www.w3resource.com/python-exercises/basic/python-basic-1-exercise-68.php
 
-    :param n:
+    :param n: int
     :return: int
     """
     counter = 0
